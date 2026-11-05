@@ -7,7 +7,11 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt -y update
 RUN apt -y install python3
 RUN apt -y install python3-pip
+RUN apt -y install curl
+RUN apt -y install iputils-ping
+RUN apt -y install openssl
 RUN pip3 install Flask
+RUN pip3 install pyOpenSSL
 
 RUN mkdir /service
 COPY hello-service.py /service/hello-service.py
